@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parentpal-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parentpal-backend
+  template:
+    metadata:
+      labels:
+        app: parentpal-backend
+    spec:
+      containers:
+        - name: parentpal
+          image: tzel/parentpal-backend:latest
+          ports:
+            - containerPort: 8080

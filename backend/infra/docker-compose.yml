@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb:11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: parentpal
+      MYSQL_USER: yulwan
+      MYSQL_PASSWORD: loveyou
+    ports:
+      - "3406:3306"
+    volumes:
+      - parentpal-data:/var/lib/mysql
+
+volumes:
+  parentpal-data:
